@@ -1,9 +1,13 @@
 <?php
-if(isset($_POST['route_date']))
+if(isset($_POST['route']))
 {
-	header('Content-Type: text/xml');
-	header('Content-Disposition: attachment; filename=colorline'.date("Y-m-d", strtotime($_POST['date'])).'.gpx');
-	$str_route = file_get_contents("route.xml"); 
+	header('Content-Type: text/gpx');
+	header('Content-Disposition: attachment; filename=colorline-'.$_POST['route'].'-'.date("Y-m-d", strtotime($_POST['date'])).'.gpx');
+	try {
+		$str_route = file_get_contents("route_".$_POST['route'].".xml");
+	} catch (Exception $e) {
+		die("Uhoh!");
+	}
 	$date1 = $_POST['date'];
 	$date2 = date("Y-m-d", strtotime($date1.' + 1 days'));
 	$str_route = str_replace("2013-07-24",$date1,$str_route);
@@ -81,13 +85,17 @@ if(isset($_POST['route_date']))
             <b style="font-size: 18px;">Kiel - Oslo</b>
             <br />
             <form action="index.php" method="POST">
-                <input type="hidden" name="route_date" value="1" /> Date <span style="font-size: 10px; color: gray;">(YYYY-MM-DD)</span>
+                <input type="hidden" value="kieloslo" name="route" /> Date <span style="font-size: 10px; color: gray;">(YYYY-MM-DD)</span>
                 <input name="date" />
                 <input type="submit" value="Generate" />
             </form>
             <br />
             <b style="font-size: 18px;">Oslo - Kiel</b>
-            <br /> Coming soon
+            <form action="index.php" method="POST">
+                <input type="hidden" value="oslokiel" name="route"  /> Date <span style="font-size: 10px; color: gray;">(YYYY-MM-DD)</span>
+                <input name="date" />
+                <input type="submit" value="Generate" />
+            </form>
             <br />
             <br/>
             <b style="font-size: 20px;">How does it work?</b>
