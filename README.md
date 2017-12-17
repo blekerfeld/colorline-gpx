@@ -24,4 +24,6 @@ For Oslo-Kiel
 * Search for 2013-07-24, and replace this with the date the journey started using the search and replace tool.
 * Do the same with 2013-07-25, this should be that date you arrived in Kiel.
 
+You can then change the file extension to `.gpx` to be able to use the files in geo-tag software.
+
 Note: Yes, I took gps-information for both directions on the same dates. 
