@@ -15,12 +15,12 @@ The idea behind this tool is to make it simple to geotag photos made on this rou
 If you don't feel like going through the hassle of copying the files and such, you can also use the .xml-files to generate gpx files for your dates by hand. 
 
 For Kiel-Oslo: 
-* Open `route_oslokiel.xml` in any text- or code-editor.
+* Open `route_kieloslo.xml` in any text- or code-editor.
 * Search for 2013-07-24, and replace this with the date the journey started using the search and replace tool.
 * Do the same with 2013-07-25, this should be that date you arrived in Oslo.
 
 For Oslo-Kiel
-* Open `route_kieloslo.xml` in any text- or code-editor.
+* Open `route_oslokiel.xml` in any text- or code-editor.
 * Search for 2013-07-24, and replace this with the date the journey started using the search and replace tool.
 * Do the same with 2013-07-25, this should be that date you arrived in Kiel.
 
